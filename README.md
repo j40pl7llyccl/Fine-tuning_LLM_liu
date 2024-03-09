@@ -1,8 +1,6 @@
 # Fine-tuning_LLM_liu
 
-項目URL:
-
-[大型語言模型微調項目](https://huggingface.co/j40pl7lly/fine-tuning-chat-liu)
+項目URL: [大型語言模型微調項目](https://huggingface.co/j40pl7lly/fine-tuning-chat-liu)
 
 1.效率：透過使用GPU加速、LoRA、梯度累積和混合精度訓練（FP16），最大化運算資源和訓練速度。
 
