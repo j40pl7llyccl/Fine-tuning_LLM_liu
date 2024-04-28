@@ -2,7 +2,7 @@
 import torch
 from transformers import AutoModelForCausalLM, DataCollatorForSeq2Seq, TrainingArguments, Trainer
 from peft import TaskType, get_peft_model, LoraConfig
-from transformers import AutoTokenizer
+import matplotlib.pyplot as plt
 
 def train_model(tokenized_ds, model_name, output_dir, epochs=1, batch_size=1, gradient_accumulation_steps=8, logging_steps=20):
     model = AutoModelForCausalLM.from_pretrained(model_name, torch_dtype=torch.half, trust_remote_code=True, low_cpu_mem_usage=True)
@@ -44,3 +44,4 @@ def plot_loss(log_history):
     plt.title("Training Loss Curve")
     plt.xlabel("Step")
     plt.ylabel("Loss")
+    plt.show()
