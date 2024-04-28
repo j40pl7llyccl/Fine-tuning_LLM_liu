@@ -25,6 +25,22 @@ def train_model(tokenized_ds, model_name, output_dir, epochs=1, batch_size=1, gr
         args=args,
         train_dataset=tokenized_ds,
         data_collator=data_collator,
+        callbacks=[TrainingCallback()] ,
     )
 
     trainer.train()
+    plot_loss(train_loss.log_history)  
+    
+class TrainingCallback(TrainerCallback):
+    def __init__(self):
+        self.train_losses = []
+
+    def on_log(self, args, state, control, logs=None, **kwargs):
+        self.train_losses.append(logs.get("loss"))
+
+def plot_loss(log_history):
+    plt.figure(figsize=(8, 6))
+    plt.plot(range(len(log_history)), log_history)
+    plt.title("Training Loss Curve")
+    plt.xlabel("Step")
+    plt.ylabel("Loss")
