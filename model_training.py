@@ -28,7 +28,7 @@ def train_model(tokenized_ds, model_name, output_dir, epochs=1, batch_size=1, gr
         callbacks=[TrainingCallback()] ,
     )
 
-    trainer.train()
+    train_loss = trainer.train()
     plot_loss(train_loss.log_history)  
     
 class TrainingCallback(TrainerCallback):
