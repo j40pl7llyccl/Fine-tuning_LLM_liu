@@ -35,6 +35,10 @@ model = AutoModelForCausalLM.from_pretrained("j40pl7lly/fine-tuning-chat-liu")
 ```
 2. python main.py 來訓練
 
+3. 測試結果
+   ![image](https://github.com/j40pl7llyccl/Fine-tuning_LLM_liu/assets/24970006/0848698b-08e3-4bc5-ab8a-74cd8044d040)
+
+
 ## Reference
 If you use this model and love it, use this to cite it 🤗
 
