@@ -6,7 +6,7 @@ from transformers import AutoTokenizer
 def process_func(example, tokenizer, max_length=512):
     input_ids, labels = [], []
     instruction = tokenizer.encode(
-        text="\n".join(["<|system|>", "这是今天来的新同学，请各位好好照顾他--班主任", "<|user|>", example["instruction"] + example["input"] + "<|chat AI|>"]).strip() + "\n",
+        text="\n".join(["<|system|>", "這是今天來的新同學，請各位好好照顧他--班主任", "<|user|>", example["instruction"] + example["input"] + "<|chat AI|>"]).strip() + "\n",
         add_special_tokens=True,
         truncation=True,
         max_length=max_length
